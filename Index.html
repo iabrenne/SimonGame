@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+
+<html>
+
+    <head> 
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">   
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="css/style.css"> 
+       
+        
+    </head>
+
+    <body>
+
+        <div class="w3-container">
+            <p>
+                <button id="button-1" onmousedown="playAud(event)" class="w3-button w3-green">
+                    <audio id="audio-1">
+                        <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3">
+                    </audio>
+                </button>
+            </p>
+            <p>
+                <button id="button-2" onclick="playAud(event)" class="w3-button w3-red">
+                    <audio id="audio-2">
+                        <source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3">
+                    </audio>
+                </button>
+            </p>
+            <p>
+                <button id="button-3" onclick="playAud(event)" class="w3-button w3-blue">
+                    <audio id="audio-3">
+                        <source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3">
+                    </audio>
+                </button>
+            </p>
+            <p>
+                <button id="button-4" onclick="playAud(event)" class="w3-button w3-yellow">
+                    <audio id="audio-4">
+                        <source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3">
+                    </audio>
+                </button>
+            </p>
+                  
+        </div>                  
+        
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script> 
+
+
+    </body>
+
+</html>
