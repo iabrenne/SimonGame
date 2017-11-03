@@ -1,5 +1,9 @@
 .w3-button{
-
     width:100px;
     height:100px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 2px #ccc;
 }
+.w3-button:active {
+    box-shadow: inset 0px 0px 8px #ccc;
+    }
