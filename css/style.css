@@ -4,6 +4,17 @@
     border: 1px solid #ccc;
     box-shadow: 2px 2px 2px #ccc;
 }
-.w3-button:active {
+
+.w3-button:disabled{
+    cursor: default;
+    opacity: 1;
+}
+
+.w3-btn {
+    box-shadow: 2px 2px 2px #ccc;
+}
+
+.w3-btn:active{
     box-shadow: inset 0px 0px 8px #ccc;
-    }
+}
+

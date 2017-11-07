@@ -14,41 +14,48 @@
 
     <body>
 
-        <div class="w3-container">
-            <p>
-                <button id="button-1" class="w3-button w3-green w3-hover-green">
+        <div class="w3-panel">
+           
+                <button id="button-1" onclick="handleUserButtonPress(event)" class="w3-button w3-green w3-hover-green" disabled>
                     <audio id="audio-1">
                         <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3">
                     </audio>
                 </button>
-            </p>
-            <p>
-                <button id="button-2" class="w3-button w3-red w3-hover-red">
+           
+                <button id="button-2" onclick="handleUserButtonPress(event)" class="w3-button w3-red w3-hover-red" disabled>
                     <audio id="audio-2">
                         <source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3">
                     </audio>
                 </button>
-            </p>
-            <p>
-                <button id="button-3" class="w3-button w3-blue w3-hover-blue">
+           
+                <button id="button-3" onclick="handleUserButtonPress(event)" class="w3-button w3-blue w3-hover-blue" disabled>
                     <audio id="audio-3">
                         <source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3">
                     </audio>
                 </button>
-            </p>
-            <p>
-                <button id="button-4" class="w3-button w3-yellow w3-hover-yellow">
+         
+                <button id="button-4" onclick="handleUserButtonPress(event)" class="w3-button w3-yellow w3-hover-yellow" disabled>
                     <audio id="audio-4">
                         <source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3">
                     </audio>
                 </button>
-            </p>
-                  
-        </div>                  
+        </div>   
+
+        <div class="w3-panel">
+            <input type="button" class="w3-btn w3-yellow" value="Start" onclick="start()">
+
+        </div>
+        
+        
+        <audio id="wrong">
+            <source src="https://www.soundjay.com/misc/sounds/fail-buzzer-02.mp3">
+        </audio>
         
 
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="js/ButtonPress.js"></script> 
+        <script type="text/javascript" src="js/ButtonPressSeries.js"></script> 
+        <script type="text/javascript" src="js/RoundManager.js"></script> 
         <script type="text/javascript" src="js/main.js"></script> 
 
 
