@@ -26,7 +26,7 @@ function RoundManager(buttonPressSeries, round, step,readyForNextRound) {
         //let player click next button in the presented series
         else {
             this.incRoundStep();
-            this.enableButtons();    
+            this.enableButtons("fromHandleCorrectPlayerInput");    
         }
     }; 
 
@@ -55,13 +55,19 @@ function RoundManager(buttonPressSeries, round, step,readyForNextRound) {
 
     };
 
-    // don't let player click until entire button press series 
-    // has been played out
-    this.enableButtons = () => {
+  
+    // We will wait for a period of time before enabling buttons
+    // If program is in the middle of presenting button press series
+    // to player, we will wait until it's done so that player can't start
+    // clicking in the middle of buttons press series being presented.
+    // Otherwise if player is in the middle of pressing buttons
+    // we will enable buttons right away
+    this.enableButtons = (whoCalledMe) => {
 
-        // let enableWait = (this.round + 0 ) * 1000;
-        
-        let enableWait = 500;
+        if (whoCalledMe == "fromHandleCorrectPlayerInput" )
+            var enableWait = 500;
+        else
+            var enableWait = (this.round + 0 ) * 1000;
 
         setTimeout ( () => {
             document.getElementById("button-1").disabled = false;
@@ -70,14 +76,11 @@ function RoundManager(buttonPressSeries, round, step,readyForNextRound) {
             document.getElementById("button-4").disabled = false;
         }, enableWait)
 
-        
- 
-
-    };
+ };
 
     this.presentButtonSeriesToPlayer = () => {
         this.buttonPressSeries.present();
-        this.enableButtons();
+        this.enableButtons("fromPresentButtonSeriesToPlayer");
     };
 
     this.nextRound = () => {
