@@ -16,7 +16,7 @@ function ButtonPress(btnId, audId, soundWait) {
     };
 
     this.releaseButton = waitMs => {    
-        setTimeout( () => document.getElementById(this.btnId).setAttribute("style","2px 2px 2px #ccc;"),waitMs) ;
+        setTimeout( () => document.getElementById(this.btnId).setAttribute("style","6px 12px 20px #ccc;"),waitMs) ;
     };
 
     this.buttonPress = () => {

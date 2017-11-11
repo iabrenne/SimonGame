@@ -94,4 +94,15 @@ function RoundManager(buttonPressSeries, round, step,readyForNextRound) {
         
 
     };
+
+    this.reset = () => { 
+    
+        this.buttonPressSeries.reset();
+        this.round = 0;
+        this.roundStep = 0;
+        this.readyForNextRound = false;
+
+
+    }
+
 };

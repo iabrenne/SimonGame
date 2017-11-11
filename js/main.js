@@ -7,7 +7,12 @@ var handleUserButtonPress = (event) => {
 
     };
     
-var start = () => roundManager.readyForNextRound = true;
+var start = (event) => { 
+    event.target.setAttribute("value","Restart");
+    roundManager.reset();
+    roundManager.readyForNextRound = true;
+    
+    }
 
 setInterval( () => { 
     if (roundManager.readyForNextRound)
