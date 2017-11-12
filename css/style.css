@@ -17,4 +17,13 @@
 .w3-btn:active{
     box-shadow: inset 0px 0px 8px #ccc;
 }
+.w3-black, .w3-hover-black:hover{
+    color:red!important;
+}
 
+
+#score{
+    display:inline-block;
+    
+
+}

@@ -3,8 +3,15 @@ function RoundManager(buttonPressSeries, round, step,readyForNextRound) {
     this.round = round;
     this.roundStep = step;
     this.readyForNextRound = readyForNextRound;
+
+    this.setRound = (round) => { 
+        this.round = round;
+        document.getElementById("score").innerText = this.round;
+    };
     
-    this.incRound = () => this.round++;
+    this.incRound = () => { 
+        this.setRound(this.round+1);
+    };
 
     this.incRoundStep = () => this.roundStep++ ;
 
@@ -109,7 +116,7 @@ function RoundManager(buttonPressSeries, round, step,readyForNextRound) {
     this.reset = () => { 
 
         this.buttonPressSeries.reset();
-        this.round = 0;
+        this.setRound(0);
         this.roundStep = 0;
         this.readyForNextRound = false;
 
