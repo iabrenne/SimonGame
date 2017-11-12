@@ -9,6 +9,8 @@ function RoundManager(buttonPressSeries, round, step,readyForNextRound) {
     this.incRoundStep = () => this.roundStep++ ;
 
     this.zeroOutRoundStep = () => this.roundStep = 0;
+
+    this.setRoundStep = roundStep => this.roundStep = roundStep;
     
     this.playerClickedCorrectButton = playerButtonId => {
 
@@ -30,6 +32,16 @@ function RoundManager(buttonPressSeries, round, step,readyForNextRound) {
         }
     }; 
 
+    this.handleIncorrectPlayerInput = plBtnPress => {
+
+         plBtnPress.setAudId("wrong");
+         plBtnPress.buttonPress();
+         this.presentButtonSeriesToPlayer();
+         this.setRoundStep(1);
+
+
+    };
+
     this.handlePlayerInput = btnClickedByPlayer => {
         this.disableButtons();
         let plBtnId = btnClickedByPlayer.id;
@@ -40,10 +52,9 @@ function RoundManager(buttonPressSeries, round, step,readyForNextRound) {
         if (this.playerClickedCorrectButton(plBtnId))
             this.handleCorrectPlayerInput(plBtnPress);
 
-        else {
-            plBtnPress.setAudId("wrong");
-            plBtnPress.buttonPress();
-        }
+        else  
+            this.handleIncorrectPlayerInput(plBtnPress);
+           
     };
 
     this.disableButtons = () => {
@@ -76,7 +87,7 @@ function RoundManager(buttonPressSeries, round, step,readyForNextRound) {
             document.getElementById("button-4").disabled = false;
         }, enableWait)
 
- };
+    };
 
     this.presentButtonSeriesToPlayer = () => {
         this.buttonPressSeries.present();
@@ -96,7 +107,7 @@ function RoundManager(buttonPressSeries, round, step,readyForNextRound) {
     };
 
     this.reset = () => { 
-    
+
         this.buttonPressSeries.reset();
         this.round = 0;
         this.roundStep = 0;
