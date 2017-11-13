@@ -41,12 +41,19 @@
                 </button>
         </div>   
 
+        
         <div class="w3-panel">
-            <input type="button" class="w3-btn w3-yellow" value="Start" onclick="start(event)">
+
+            <input type="button" class="w3-btn w3-green" value="Start" onclick="start(event)">
+
+            <input type="button" id="stop-button" class="w3-btn w3-red" value="Stop" onclick="stop(event)">
+                    
             <div id="score" class="w3-card-4 w3-container w3-padding w3-black">0</div>
+
         </div>
-        
-        
+       
+
+
         <audio id="wrong">
             <source src="https://www.soundjay.com/misc/sounds/fail-buzzer-02.mp3">
         </audio>

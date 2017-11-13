@@ -21,9 +21,11 @@
     color:red!important;
 }
 
-
 #score{
     display:inline-block;
-    
+    height: 100%;
+}
 
+#stop-button{
+    display:none;    
 }
