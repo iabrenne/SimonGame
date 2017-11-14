@@ -18,6 +18,21 @@ function ButtonPressSeries() {
     }
 
 
+    // delay all sounds by 1.5 seconds to make room for the "wrong beep" 
+    // that needs to go first when user clicks the wrong button.
+
+    this.delaySoundWait = () => {
+        this.buttonPresses.forEach( (element,index) => element.setSoundWait((index+1)*1000 )) ;
+
+    }
+
+    // reset sound wait delay back to normal - which is one second apart, starting with 0
+    // eg: 0 seconds for beep#1, 1 second for beep#2, etc...
+    
+    this.resetSoundWait = () => {
+        this.buttonPresses.forEach( (element,index) => element.setSoundWait(index*1000 ));
+
+    }
     this.getButtonId = btnIdIndex => this.buttonPresses[btnIdIndex].getBtnId();
 
     this.reset = () => this.buttonPresses = [];

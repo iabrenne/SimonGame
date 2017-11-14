@@ -42,6 +42,7 @@ function RoundManager(buttonPressSeries, round, step,readyForNextRound) {
     this.handleIncorrectPlayerInput = plBtnPress => {
 
          plBtnPress.setAudId("wrong");
+         this.buttonPressSeries.delaySoundWait();
          plBtnPress.buttonPress();
          this.presentButtonSeriesToPlayer();
          this.setRoundStep(1);
@@ -106,7 +107,8 @@ function RoundManager(buttonPressSeries, round, step,readyForNextRound) {
         this.disableButtons();
         this.incRound();
         this.zeroOutRoundStep();
-        this.incRoundStep();        
+        this.incRoundStep();  
+        this.buttonPressSeries.resetSoundWait();      
         this.buttonPressSeries.addButtonPress();
         this.presentButtonSeriesToPlayer();
         

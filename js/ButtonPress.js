@@ -8,7 +8,21 @@ function ButtonPress(btnId, audId, soundWait) {
     this.setAudId = audId => this.audId = audId ;
 
     this.makeSound = waitMs => { 
-        setTimeout( () => document.getElementById(this.audId).play(), waitMs );
+        setTimeout( () => { 
+            let aud = document.getElementById(this.audId);
+
+            // .mp3 for the wrong buzzer is way longer than the regular sounds.
+            // since we cant change duration of an audio element, we are
+            // changing currentTime property instead. This way it appears
+            // that wrong buzzer has the same length as the rest of the
+            // sounds.
+            
+            if(this.audId == "wrong")
+                aud.currentTime = 0.638041;
+
+            aud.play();
+                        
+        }, waitMs );
     }; 
 
     this.clickButton = waitMs => {    
@@ -19,6 +33,8 @@ function ButtonPress(btnId, audId, soundWait) {
         setTimeout( () => document.getElementById(this.btnId).setAttribute("style","6px 12px 20px #ccc;"),waitMs) ;
     };
 
+    this.setSoundWait = (soundWait) => this.soundWait = soundWait;
+    
     this.buttonPress = () => {
         setTimeout ( () => {
             this.clickButton(0);
