@@ -21,6 +21,7 @@ var start = (event) => {
 
 var stop = () => {
     roundManager.readyForNextRound = false;
+    roundManager.setRound(0);
     hideStopButton();
 
 };
