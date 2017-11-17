@@ -1,3 +1,4 @@
+const LAST_ROUND = 20;
 let buttonPressSeries = new ButtonPressSeries();
 let roundManager = new RoundManager(buttonPressSeries,0,0,false);
 

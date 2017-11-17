@@ -7,6 +7,7 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">   
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css"> 
        
         
@@ -14,7 +15,7 @@
 
     <body>
 
-        <div class="w3-panel">
+        <div id="play-buttons" class="w3-panel">
            
                 <button id="button-1" onclick="handleUserButtonPress(event)" class="w3-button w3-green w3-hover-green" disabled>
                     <audio id="audio-1">
@@ -42,7 +43,7 @@
         </div>   
 
         
-        <div class="w3-panel">
+        <div id="control-panel" class="w3-panel">
 
             <input type="button" class="w3-btn w3-green" value="Start" onclick="start(event)">
 
@@ -50,6 +51,10 @@
                     
             <div id="score" class="w3-card-4 w3-container w3-padding w3-black">0</div>
 
+        </div>
+
+        <div id="win-alert" class="alert alert-success alert-dismissable w3-margin">
+            <strong>Congratulations!</strong> You Won!
         </div>
        
 
@@ -60,6 +65,7 @@
         
 
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
         <script type="text/javascript" src="js/ButtonPress.js"></script> 
         <script type="text/javascript" src="js/ButtonPressSeries.js"></script> 
         <script type="text/javascript" src="js/RoundManager.js"></script> 

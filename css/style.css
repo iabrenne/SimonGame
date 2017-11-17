@@ -1,6 +1,12 @@
+#play-buttons{
+    padding-top:16px;
+    width:95%;
+    margin:auto;
+}
+
 .w3-button{
-    width:100px;
-    height:100px;
+    width:20vw;
+    height:20vw;
     border: 1px solid #ccc;
     box-shadow: 6px 12px 20px #ccc;
 }
@@ -21,6 +27,11 @@
     color:red!important;
 }
 
+#control-panel{
+    width:280px;
+    margin:auto;
+    padding-top:16px;
+}
 #score{
     display:inline-block;
     height: 100%;
@@ -28,4 +39,10 @@
 
 #stop-button{
     display:none;    
+}
+
+#win-alert{
+    width:90%;
+    margin:auto;
+    display:none;
 }

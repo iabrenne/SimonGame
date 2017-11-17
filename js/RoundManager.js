@@ -18,6 +18,18 @@ function RoundManager(buttonPressSeries, round, step,readyForNextRound) {
     this.zeroOutRoundStep = () => this.roundStep = 0;
 
     this.setRoundStep = roundStep => this.roundStep = roundStep;
+
+    this.handlePlayerWon = () => {
+        setTimeout( () => {
+            document.getElementById("win-alert").style.display = 'block';
+            this.reset();
+        },1000)
+        setTimeout( () => {
+            document.getElementById("win-alert").style.display = 'none';
+            this.readyForNextRound = true;
+        },3000)
+
+    }
     
     this.playerClickedCorrectButton = playerButtonId => {
 
@@ -28,9 +40,13 @@ function RoundManager(buttonPressSeries, round, step,readyForNextRound) {
     this.playerPassedRound = () => buttonPressSeries.getNumOfBtnPresses() == this.roundStep;
 
     this.handleCorrectPlayerInput = plBtnPress => {
+        
         plBtnPress.buttonPress();
+        
+        if(this.round == LAST_ROUND && this.playerPassedRound())
+            this.handlePlayerWon();
         //advance to next round
-        if (this.playerPassedRound())
+        else if (this.playerPassedRound())
             this.readyForNextRound = true;
         //let player click next button in the presented series
         else {
