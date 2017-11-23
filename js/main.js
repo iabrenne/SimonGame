@@ -1,4 +1,6 @@
 const LAST_ROUND = 20;
+var STRICT = false;
+
 let buttonPressSeries = new ButtonPressSeries();
 let roundManager = new RoundManager(buttonPressSeries,0,0,false);
 
@@ -26,6 +28,11 @@ var stop = () => {
     hideStopButton();
 
 };
+
+var strict = (event) => STRICT = !STRICT ;
+
+
+
 setInterval( () => { 
     if (roundManager.readyForNextRound)
         roundManager.nextRound() }, 3000);

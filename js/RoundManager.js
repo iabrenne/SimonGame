@@ -60,8 +60,15 @@ function RoundManager(buttonPressSeries, round, step,readyForNextRound) {
          plBtnPress.setAudId("wrong");
          this.buttonPressSeries.delaySoundWait();
          plBtnPress.buttonPress();
-         this.presentButtonSeriesToPlayer();
-         this.setRoundStep(1);
+         if (!STRICT){
+            this.presentButtonSeriesToPlayer();
+            this.setRoundStep(1);
+         }
+         else {
+            this.reset();
+            this.readyForNextRound = true;  
+
+         }
 
 
     };
