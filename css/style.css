@@ -1,14 +1,28 @@
-#play-buttons{
-    padding-top:16px;
-    width:95%;
+#main{
+
+    position: absolute;
+    height:100vmin; 
+    max-height:180px;  
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     margin:auto;
 }
 
+#play-buttons{
+    padding-top:16px;
+    margin:auto;
+    max-width: 500px;
+    width:80vmin;
+}
+
 .w3-button{
-    width:20vw;
-    height:20vw;
     border: 1px solid #ccc;
     box-shadow: 6px 12px 20px #ccc;
+    width: 50%;
+    height: 15vw;
+    max-height:70px;
 }
 
 .w3-button:disabled{
@@ -28,7 +42,8 @@
 }
 
 #control-panel{
-    width:280px;
+    max-width: 500px;
+    width:80vmin;
     margin:auto;
     padding-top:16px;
 }
