@@ -31,7 +31,9 @@
 }
 
 .w3-btn {
+    width:49%;
     box-shadow: 2px 2px 2px #ccc;
+    margin-left: 1px;
 }
 
 .w3-btn:active{
@@ -49,7 +51,14 @@
 }
 #score{
     display:inline-block;
-    height: 100%;
+    width:50%;
+   
+}
+
+#strict-check-div{
+    box-shadow: 2px 2px 2px #ccc;
+    width:50%;
+    height:100%;
 }
 
 #stop-button{
