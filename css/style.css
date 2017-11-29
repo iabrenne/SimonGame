@@ -52,6 +52,8 @@
 #score{
     display:inline-block;
     width:50%;
+    text-align: center;
+    font-weight: bolder;
    
 }
 
@@ -59,10 +61,6 @@
     box-shadow: 2px 2px 2px #ccc;
     width:50%;
     height:100%;
-}
-
-#stop-button{
-    display:none;    
 }
 
 #win-alert{

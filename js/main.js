@@ -16,6 +16,7 @@ var handleUserButtonPress = (event) => {
     
 var start = (event) => { 
     event.target.setAttribute("value","Restart");
+    document.getElementById("stop-button").disabled = false;
     roundManager.reset();
     roundManager.readyForNextRound = true;
     showStopButton();
