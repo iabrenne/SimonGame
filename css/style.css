@@ -1,16 +1,20 @@
 #main{
     position: absolute;
     height:100vmin; 
-    max-height:180px;  
+    max-height:250px;  
     top:0;
     bottom: 0;
     left: 0;
     right: 0;
     margin:auto;
+    max-width: 500px;
+    width:80vmin;;
+    display:flex;
+    flex-direction:column;
+  
 }
 
 #play-buttons{
-    padding-top:16px;
     margin:auto;
     max-width: 500px;
     width:80vmin;
